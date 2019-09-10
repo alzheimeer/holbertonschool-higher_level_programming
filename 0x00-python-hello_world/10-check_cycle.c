@@ -18,15 +18,6 @@ int check_cycle(listint_t *list)
 
 		if (lento == rap)
 		{
-			while (1)
-			{
-				lento = rap;
-				while (rap->next != lento && rap->next != list)
-					rap = rap->next;
-				if (rap->next == list)
-					break;
-				list = list->next;
-			}
 			return (1);
 		}
 	}
