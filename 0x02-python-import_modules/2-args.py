@@ -11,4 +11,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(lenargv - 1))
         for i in range(1, lenargv):
             print("{}: {}".format(i, sys.argv[i]))
-            lenargv += 1
+
