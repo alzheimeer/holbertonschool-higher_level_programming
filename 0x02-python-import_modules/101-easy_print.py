@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-__import__('os').system("cat a")
+import a
