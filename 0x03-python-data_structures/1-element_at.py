@@ -3,7 +3,7 @@ def element_at(my_list, idx):
     lenx = len(my_list)
     if idx < 0:
         return(None)
-    elif idx > lenx:
+    elif idx > lenx - 1:
         return(None)
     i = my_list[idx]
     return(i)
