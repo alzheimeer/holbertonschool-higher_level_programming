@@ -7,11 +7,14 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *aux1 = *head, *aux2 = *head;
-	int c = 0, n = 0, i = 0, j = 0;
+	listint_t *aux1, *aux2;
+	int c, n, i, j;
 
-	if (head == NULL && *head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
+	aux1 = *head;
+	aux2 = *head;
+	c = 0, n = 0, i = 0, j = 0;
 	while (aux2->next)
 	{
 		aux2 = aux2->next;
