@@ -14,21 +14,21 @@ int is_palindrome(listint_t **head)
 	{
 		aux2 = aux2->next;
 		c++;
-     	}
+	}
 	n = (c + 1) / 2;
 	for (i = 0; i < n; i++)
 	{
 		j = 0;
 		if (aux1->n != aux2->n)
-			return(0);
-		aux2 = aux1;
+			return (0);
+		aux2 = *head;
 		aux1 = aux1->next;
-		while(j < c - 1)
+		c--;
+		while (j < c)
 		{
 			aux2 = aux2->next;
 			j++;
 		}
-		c--;
 	}
-	return(1);
+	return (1);
 }
