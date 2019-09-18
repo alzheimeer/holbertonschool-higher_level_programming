@@ -15,19 +15,20 @@ int is_palindrome(listint_t **head)
 		aux2 = aux2->next;
 		c++;
      	}
-	printf("%d", c);
-	n = c / 2;
+	n = (c + 1) / 2;
 	for (i = 0; i < n; i++)
 	{
+		j = 0;
 		if (aux1->n != aux2->n)
 			return(0);
 		aux2 = aux1;
 		aux1 = aux1->next;
-		while(j < (c - 1))
+		while(j < c - 1)
 		{
 			aux2 = aux2->next;
 			j++;
 		}
+		c--;
 	}
 	return(1);
 }
