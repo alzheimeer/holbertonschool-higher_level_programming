@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
     if matrix:
-        return [list(map(jf, i)) for i in matrix]
+        return list(map(lambda x: list(map(jf, x)), matrix))
 
 
 def jf(x):
