@@ -4,7 +4,7 @@ class Square:
         self.size = size
 
     def area(self):
-        return (self.__size ** 2)
+        return (self.__size**2)
 
     @property
     def size(self):
@@ -22,7 +22,7 @@ class Square:
         if self.size == 0:
             print()
         else:
-            for i in  range(self.size):
+            for i in range(self.size):
                 for j in range(self.size):
                     print("#", end='')
                 print()
