@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 class Node:
-    def __init__(self, data, next_node=None):
-        self.__data = data
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
 
     @property
     def data(self):
@@ -14,15 +15,15 @@ class Node:
         self.__data = value
 
     @property
-    def next_node(self):
-        return self.__next_node
+    def next(self):
+        return self.__next
 
-    @next_node.setter
-    def next_node(self, value):
+    @next.setter
+    def next(self, value):
         if value is None or isinstance(value, Node):
-            self.__next_node = value
+            self.__next = value
         else:
-            raise TypeError("next_node must be a Node object")
+            raise TypeError("next must be a Node object")
 
 
 class SinglyLinkedList:
@@ -30,33 +31,30 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
+        actual = self.__head
+        previo = None
+        temp = Node(value)
 
-        if not isinstance(value, int):
-            raise TypeError("data must be an integer")
-
-        aux = None
-        i = self.__head
-        new_node = Node(value)
-
-        if self.__head is None:
-            new_node.__next_node = None
-            self.__head = new_node
+        if actual is None:
+            temp.__next = None
+            self.__head = temp
 
         else:
-            while i is not None and value > i.data:
-                aux = i
-                i = i.__next_node
-            if aux is None:
-                new_node.__next_node = self.__head
-                self.__head = new_node
+            while actual is not None and value > actual.data:
+                previo = actual
+                actual = actual.__next
+            if previo is None:
+                temp.__next = self.__head
+                self.__head = temp
             else:
-                aux.__next_node = new_node
-                new_node.__next_node = i
+                previo.__next = temp
+                temp.__next = actual
 
     def __str__(self):
 
-        list1 = []
-        while self.__head is not None:
-            list1.append(self.__head.data)
-            self.__head = self.__head.__next_node
-        return ('\n'.join(str(self.__head) for self.__head in list1))
+        n = []
+        temp = self.__head
+        while temp is not None:
+            n.append(str(temp.data))
+            temp = temp.__next
+        return ('\n'.join(n))
