@@ -51,3 +51,19 @@ class Square:
             for num in range(self.__size):
                 print("#", end='')
             print()
+
+    def __str__(self):
+        s = []
+        if self.__size == 0:
+            return ''
+        if self.__position[0] >= 0 and self.__position[1] >= 0:
+            for l in range(self.__position[1]):
+                s.append('\n')
+        for i in range(self.__size):
+            for espacios in range(self.__position[0]):
+                s.append(' ')
+            for num in range(self.__size):
+                s.append('#')
+            if i != self.__size - 1:
+                s.append('\n')
+        return ''.join(s)
