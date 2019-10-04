@@ -1,0 +1,92 @@
+============================
+``2-matrix_divided`` module
+============================
+
+``matrix_divided()`` divides a int float matrix
+::
+
+Importing function from the module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], -3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 4.5)
+    [[0.22, 0.44, 0.67], [0.89, 1.11, 1.33]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 'X')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    >>> m = [[5, 12, 33], [10, 75, 1]]
+    >>> matrix_divided(m, 3)
+    [[1.67, 4.0, 11.0], [3.33, 25.0, 0.33]]
+
+    >>> m = [[5, 12, 33], [10, 75, 1]]
+    >>> matrix_divided(m, 2)
+    [[2.5, 6.0, 16.5], [5.0, 37.5, 0.5]]
+
+
+Dividing a matrix by a float number:
+    >>> m = [[-8, 20, 30], [1.33, 3.74, 6.89], [-8, -9.71, 0]]
+    >>> matrix_divided(m, 5.3)
+    [[-1.51, 3.77, 5.66], [0.25, 0.71, 1.3], [-1.51, -1.83, 0.0]]
+
+
+Passing a tuple as an argument:
+
+    >>> matrix_divided((3, 6, 9), 3)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], (1, 2, 3)], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], [4, 'a', 6]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1]], 2)
+    [[0.5]]
+
+    >>> matrix = []
+    >>> matrix_divided(matrix, 9)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided(1, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[5.7, 8.1], [7.7, 4.9]], [2])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: div must be a number
+
+
+    >>> matrix = [[1, 2], []]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
