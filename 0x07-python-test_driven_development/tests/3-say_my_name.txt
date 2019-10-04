@@ -1,0 +1,82 @@
+================
+3-say_my_name.py
+================
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+    >>> say_my_name("Carlos", "Quintero")
+    My name is Carlos Quintero
+
+    >>> say_my_name("Edgar", "Quintero")
+    My name is Edgar Quintero
+
+    >>> say_my_name("Mauricio")
+    My name is Mauricio 
+
+    >>> say_my_name("E", "Q")
+    My name is E Q
+
+    >>> say_my_name("    ", "    ")
+    My name is          
+
+    >>> say_my_name(" ", "Quintero")
+    My name is   Quintero
+
+    >>> say_my_name("Edgar", " ")
+    My name is Edgar  
+
+    >>> say_my_name("", "")
+    My name is  
+
+    >>> say_my_name("Edgar", "")
+    My name is Edgar 
+
+    >>> say_my_name("", "Quintero")
+    My name is  Quintero
+
+    >>> say_my_name("Edgar", 5)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Edgar", 1.3)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(5, "Quintero")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(1.3, "Quintero")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(['E', 'Q'], "Quintero")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(('E', 'Q'), "Quintero")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Edgar", ['E', 'Q'])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Edgar", ('E', 'Q'))
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Edgar", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None, "Quintero")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
