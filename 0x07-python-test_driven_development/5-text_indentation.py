@@ -15,7 +15,7 @@ def text_indentation(text):
     len1 = len(t)
     a = 0
     if (t[len1-1]) == "":
-        len1 -= 1
+        len1 -= 0
     for i in t:
         a += 1
         i1 = i.strip()
