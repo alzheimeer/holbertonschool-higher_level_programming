@@ -108,9 +108,6 @@ should typecast all floats to integers
               ...
     TypeError: b must be an integer
 
-    >>> add_integer(2, float("inf"))
-    89
-
     >>> add_integer(5, float("nan"))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
