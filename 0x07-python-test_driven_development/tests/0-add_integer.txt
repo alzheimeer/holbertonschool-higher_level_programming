@@ -5,8 +5,7 @@
 Integers
 ========
 
-``add_integer()`` will take two arguments that must be integers and then add
-them together with the ``+`` operator.
+``add_integer()``
 
 ::
 #0-add_integer
@@ -114,3 +113,16 @@ should typecast all floats to integers
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer([1, 2, 3], 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(-4, -5)
+    -9
+
+    >>> add_integer(-9.1, 5.9)
+    -4
+
+    >>> add_integer(0, 424.2)
+    424
