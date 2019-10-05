@@ -10,7 +10,7 @@ Integers
 ::
 #0-add_integer
 Importing function from the module:
-    >>> add_integer = __import__('01').add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(0, 1)
     1
 
@@ -20,6 +20,11 @@ Importing function from the module:
     >>> add_integer(0, -1)
     -1
 
+    >>> add_integer(-1, 0)
+    -1
+
+    >>> add_integer(False, True)
+    1
     >>> add_integer(1000.1, 1)
     1001
 
@@ -98,7 +103,7 @@ should typecast all floats to integers
     >>> add_integer(-1)
     97
 
-    >>> add_integer(1, 'p')
+    >>> add_integer(3, '3')
     Traceback (most recent call last):
               ...
     TypeError: b must be an integer
@@ -126,3 +131,10 @@ should typecast all floats to integers
 
     >>> add_integer(0, 424.2)
     424
+
+    >>> add_integer(1, 999999999999)
+    1000000000000
+
+    >>> add_integer(1, 7, 1)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
