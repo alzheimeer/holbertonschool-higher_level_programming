@@ -15,7 +15,10 @@ def matrix_divided(matrix, div):
     lengh = 0
     if not matrix or not isinstance(matrix, list):
         raise TypeError(mt)
+    row_size = len(matrix[0])
     for row in matrix:
+        if len(row) != row_size:
+            raise TypeError(ms)
         if lengh != 0 and len(row) != lengh:
             raise TypeError(ms)
         if not row or not isinstance(row, list):
