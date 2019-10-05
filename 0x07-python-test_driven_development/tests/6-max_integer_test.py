@@ -32,6 +32,12 @@ class TestMaxInteger(unittest.TestCase):
         pr = [1.1, 2.2, 3.3, 4.4]
         self.assertEqual(max_integer(pr), 4.4)
 
+        pr = [-1, 2, 4, 3]
+        self.assertEqual(max_integer(pr), 4)
+
+        pr = [1]
+        self.assertEqual(max_integer(pr), 1)
+
     def test_negatives(self):
 
         pr = [-2, 0, 2, 4]
@@ -39,6 +45,9 @@ class TestMaxInteger(unittest.TestCase):
 
         pr = [-7, -6, -5, -4]
         self.assertEqual(max_integer(pr), -4)
+
+        pr = [-1, -2, -3, -4]
+        self.assertEqual(max_integer(pr), -1)
 
     def test_none_and_zero(self):
 
