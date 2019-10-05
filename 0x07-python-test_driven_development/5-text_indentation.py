@@ -19,6 +19,8 @@ def text_indentation(text):
     for i in t:
         a += 1
         i1 = i.strip()
-        print(i1)
         if a < len1:
+            print(i1)
             print()
+        else:
+            print(i1, end="")
