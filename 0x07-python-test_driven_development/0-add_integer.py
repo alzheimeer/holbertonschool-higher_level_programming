@@ -2,6 +2,8 @@
 """
 This module has a function that adds two numbers
 """
+
+
 def add_integer(a, b=98):
     """
     Args:

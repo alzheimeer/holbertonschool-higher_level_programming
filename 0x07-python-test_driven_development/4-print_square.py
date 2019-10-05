@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Documentation for a square printing function"""
+
+
 def print_square(size):
     """print a square
     Args:

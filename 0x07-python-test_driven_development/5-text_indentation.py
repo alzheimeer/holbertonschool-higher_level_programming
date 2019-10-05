@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Function that splits a text according to ., ?, and :"""
+
+
 def text_indentation(text):
     """Args:
        text (str): the string of text to split
@@ -17,6 +19,6 @@ def text_indentation(text):
     for i in t:
         a += 1
         i1 = i.strip()
-        print (i1)
+        print(i1)
         if a < len1:
             print()

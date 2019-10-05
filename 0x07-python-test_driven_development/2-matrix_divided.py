@@ -2,6 +2,8 @@
 """
 This module has a function that divides a matrix
 """
+
+
 def matrix_divided(matrix, div):
     """ Function that divides the integer/float numbers of a matrix
     Args:
