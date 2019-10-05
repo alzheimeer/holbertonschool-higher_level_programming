@@ -9,9 +9,9 @@ Integers
 them together with the ``+`` operator.
 
 ::
-
+#0-add_integer
 Importing function from the module:
-    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer = __import__('01').add_integer
     >>> add_integer(0, 1)
     1
 
@@ -40,10 +40,21 @@ should typecast all floats to integers
     >>> add_integer(-98)
     0
 
+    >>> add_integer('p', 0)
+    Traceback (most recent call last):
+	    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None, 0.0)
+    Traceback (most recent call last):
+	    ...
+    TypeError: a must be an integer
+
     >>> add_integer(0.0, None)
     Traceback (most recent call last):
 	    ...
     TypeError: b must be an integer
+
 
     >>> add_integer(0, "pepe")
     Traceback (most recent call last):
@@ -87,3 +98,8 @@ should typecast all floats to integers
 
     >>> add_integer(-1)
     97
+
+    >>> add_integer(1, 'p')
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
