@@ -1,0 +1,61 @@
+======================
+``5-text_indentation``
+======================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text = "a, b. c: d? e"
+    >>> text_indentation(text)
+    a, b.
+    <BLANKLINE>
+    c:
+    <BLANKLINE>
+    d?
+    <BLANKLINE>
+    e
+
+    >>> text = "a, b. c: d? e."
+    >>> text_indentation(text)
+    a, b.
+    <BLANKLINE>
+    c:
+    <BLANKLINE>
+    d?
+    <BLANKLINE>
+    e.
+    <BLANKLINE>
+
+    >>> text = ".:?."
+    >>> text_indentation(text)
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("Hello World!")
+    Hello World!
+
+    >>> string = "Hello, my name is Edgar.  What is your name?     This is my school:          Holberton School"
+
+    >>> text_indentation(string)
+    Hello, my name is Edgar.
+    <BLANKLINE>
+    What is your name?
+    <BLANKLINE>
+    This is my school:
+    <BLANKLINE>
+    Holberton School
