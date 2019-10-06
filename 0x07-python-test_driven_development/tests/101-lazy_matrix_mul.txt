@@ -1,13 +1,15 @@
-==================
-``101-matrix_mul``
-==================
+============================
+``101-lazy_matrix_mul`` module
+============================
 
-``matrix_mul()`` matrix x matrix.
+``lazy_matrix_mul()`` matrix dot multiplication using numpy.
 
 ::
 
-
+Importing function from the module:
     >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Now Use it
 
     >>> lazy_matrix_mul(1, [1])
     Traceback (most recent call last):
