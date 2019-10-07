@@ -45,7 +45,7 @@ class Rectangle:
 
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
-            perimeter =  0
+            perimeter = 0
         else:
             perimeter = 2 * self.__width + 2 * self.__height
 
@@ -68,7 +68,6 @@ class Rectangle:
         """eval"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-
     def __del__(self):
         """delete instance"""
         type(self).number_of_instances -= 1
@@ -78,8 +77,6 @@ class Rectangle:
     def square(cls, size=0):
         """ rectangle with width = height"""
         return cls(size, size)
-
-
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
