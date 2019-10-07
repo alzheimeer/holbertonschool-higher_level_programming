@@ -60,3 +60,12 @@ class Rectangle:
                 if i != self.__height - 1:
                     s += '\n'
             return s
+
+    def __repr__(self):
+        """eval"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+
+    def __del__(self):
+        """delete instance"""
+        print("Bye rectangle...")
