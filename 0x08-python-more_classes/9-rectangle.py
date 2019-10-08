@@ -42,7 +42,7 @@ class Rectangle:
 
     def area(self):
         """Calculate area of rectangle."""
-        return (self.__width * self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         """Calculate perimeter of rectangle."""
@@ -63,7 +63,8 @@ class Rectangle:
 
     def __repr__(self):
         """eval"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle(" + str(self.__width) + \
+            ", " + str(self.__height) + ")"
 
     def __del__(self):
         """delete instance"""
