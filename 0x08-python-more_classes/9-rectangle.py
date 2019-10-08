@@ -41,28 +41,25 @@ class Rectangle:
         self.__height = value
 
     def area(self):
+        """Calculate area of rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
+        """Calculate perimeter of rectangle."""
         if self.__width == 0 or self.__height == 0:
-            perimeter = 0
-        else:
-            perimeter = 2 * self.__width + 2 * self.__height
-
-        return perimeter
+            return 0
+        return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """Representation of rectangle"""
+        """Get string representation of rectangle."""
         s = ""
         if self.__width == 0 or self.__height == 0:
-            s = ""
-        else:
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    s += str(self.print_symbol)
-                if i != self.__height - 1:
-                    s += '\n'
             return s
+        for row in range(self.__height):
+            for char in range(self.__width):
+                s += '#'
+            s += '\n'
+        return s[:-1]
 
     def __repr__(self):
         """eval"""
@@ -73,11 +70,6 @@ class Rectangle:
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
-    @classmethod
-    def square(cls, size=0):
-        """ rectangle with width = height"""
-        return cls(size, size)
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Static method"""
@@ -87,3 +79,9 @@ class Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
         if rect_1.area() >= rect_2.area():
             return rect_1
+
+
+    @classmethod
+    def square(cls, size=0):
+        """ rectangle with width = height"""
+        return cls(size, size)
