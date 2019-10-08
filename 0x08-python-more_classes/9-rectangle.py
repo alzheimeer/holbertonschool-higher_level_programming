@@ -8,7 +8,7 @@ class Rectangle:
     """Print a rectangle"""
     def __init__(self, width=0, height=0):
         """Initialize the object"""
-        type(self).number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
 
@@ -67,7 +67,7 @@ class Rectangle:
 
     def __del__(self):
         """delete instance"""
-        type(self).number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
@@ -79,7 +79,8 @@ class Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
         if rect_1.area() >= rect_2.area():
             return rect_1
-
+        else:
+            return rect_2
 
     @classmethod
     def square(cls, size=0):
