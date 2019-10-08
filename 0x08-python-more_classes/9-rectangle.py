@@ -12,7 +12,7 @@ class Rectangle:
         """Initialize class."""
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -65,12 +65,11 @@ class Rectangle:
 
     def __repr__(self):
         """eval"""
-        return "Rectangle(" + str(self.__width) + \
-            ", " + str(self.__height) + ")"
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """delete instance"""
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
@@ -89,5 +88,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Return a new Rectangle instance with width == height == size"""
+        """ rectangle with width = height"""
         return cls(size, size)
