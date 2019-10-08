@@ -4,6 +4,7 @@
 '''
 import sys
 
+
 def cposition(b, row, col):
     '''Checks position'''
     for c in range(col):
