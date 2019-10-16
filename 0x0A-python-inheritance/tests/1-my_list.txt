@@ -33,3 +33,13 @@ True
 >>> c = MyList([10, -5, 1, 6, -12, 55, 100])
 >>> c.print_sorted()
 [-12, -5, 1, 6, 10, 55, 100]
+
+-------------------------------------------------------------
+>>> my_list = MyList()
+>>> my_list.append(7)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 7]
+>>> my_list
+[7, 1, 2]

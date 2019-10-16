@@ -22,6 +22,30 @@ Traceback (most recent call last):
 TypeError: area() takes 1 positional argument but 2 were given
 
 ----------------------------------------------------------
+>>> bg.integer_validator("name", -5)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+----------------------------------------------------------
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+----------------------------------------------------------
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+----------------------------------------------------------
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+----------------------------------------------------------
 >>> bg.integer_validator()
 Traceback (most recent call last):
     ...
@@ -62,5 +86,3 @@ TypeError: mao must be an integer
 Traceback (most recent call last):
    ...
 TypeError: mao must be an integer
-
-----------------------------------------------------------
