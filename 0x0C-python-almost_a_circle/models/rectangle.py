@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Class Rectange
+"""
 from models.base import Base
 
 
@@ -84,8 +87,9 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        p = '[Rectangle]'+' ('+str(self.id)+') '+str(self.__x)\
-+'/'+str(self.__y)+' - '+str(self.__width)+'/'+str(self.__height)
+        p1 = '[Rectangle]'+' ('+str(self.id)+') '+str(self.__x)+'/'
+        p2 = str(self.__y)+' - '+str(self.__width)+'/'+str(self.__height)
+        p = p1 + p2
         return(p)
 
     def update(self, *args, **kwargs):
