@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Unittest for models/square.py
+Unit test for models/square.py
 """
 
 import sys

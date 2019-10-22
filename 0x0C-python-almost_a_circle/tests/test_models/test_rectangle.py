@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Unittest for models/rectangle.py
+Unit test for models/rectangle.py
 """
 
 import sys

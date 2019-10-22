@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Unittest for models/base.py
+Unit test for models/base.py
 """
 
 import unittest
