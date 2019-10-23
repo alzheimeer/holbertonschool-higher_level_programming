@@ -31,16 +31,16 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Updating variable arguments"""
-        a = ['id', 'size', 'x', 'y']
-        count = 0
-        if not args:
+        j = ['id', 'size', 'x', 'y']
+        i = 0
+        if kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-                count += 1
-        else:
+                i += 1
+        if args:
             for c in args:
-                setattr(self, a[count], c)
-                count += 1
+                setattr(self, j[i], c)
+                i += 1
 
     def to_dictionary(self):
         """dictionary of a Square"""
