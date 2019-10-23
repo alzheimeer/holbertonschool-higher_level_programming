@@ -118,25 +118,28 @@ class Base():
     def draw(list_rectangles, list_squares):
         '''draw'''
         import turtle
-        import time
-        from random import randrange
-        turtle.Screen().colormode(255)
-        for i in list_rectangles + list_squares:
-            t = turtle.Turtle()
-            t.color((randrange(255), randrange(255), randrange(255)))
-            t.pensize(1)
-            t.penup()
-            t.pendown()
-            t.setpos((i.x + t.pos()[0], i.y - t.pos()[1]))
+        from random import randint
+        lists = list_rectangles + list_squares
+        turtle.colormode(255)
+        turtle.bgcolor("blue")
+        t = turtle.Turtle()
+        t.shape("turtle")
+        t.color("#ffffff")
+        j = -200
+        y = -255
+        for i in lists:
+            t.pensize(0)
+            t.color((randint(1,255), randint(1,255),randint(1,255)))
+            t.goto(j, y)
+            j += 70
+            y += 60
             t.pensize(10)
-            t.forward(i.width)
-            t.left(90)
-            t.forward(i.height)
-            t.left(90)
-            t.forward(i.width)
-            t.left(90)
-            t.forward(i.height)
-            t.left(90)
-            t.end_fill()
+            for r in range(2):
+                t.back(i.width)
+                t.right(90)
+                t.back(i.height)
+                t.right(90)
+            t.left(50)
 
-        time.sleep(5)
+
+        turtle.exitonclick()
