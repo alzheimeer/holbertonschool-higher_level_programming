@@ -29,8 +29,6 @@ class SquareTest(unittest.TestCase):
         if os.path.exists("Square.json"):
             os.remove("Square.json")
 
-    #-----------------Test----------------------------
-
     def test_A(self):
         '''Tests Square class type.'''
         self.assertEqual(str(Square),
