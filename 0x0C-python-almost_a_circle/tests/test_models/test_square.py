@@ -412,16 +412,6 @@ class SquareTest(unittest.TestCase):
         output = "##\n##\n"
         self.assertEqual(s, output)
 
-    def test_args_and_kwargs(self):
-        r = Square(1, 2, 3, 4)
-        r.update(99, height=66)
-        self.assertEqual(r.__str__(), "[Square] (99) 2/3 - 1")
-
-    def test_invalid_kwargs(self):
-        r = Square(1, 2, 3, 4)
-        r.update(weight=25)
-        self.assertEqual(hasattr(r, 'weight'), False)
-
     def test_size(self):
         r = Square(5)
         self.assertEqual(r.size, 5)
