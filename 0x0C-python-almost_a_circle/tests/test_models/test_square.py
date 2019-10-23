@@ -99,6 +99,44 @@ class SquareTest(unittest.TestCase):
         msg = "width must be > 0"
         self.assertEqual(str(e.exception), msg)
 
+    def test_D_instantiation_positional(self):
+        '''Tests positional instantiation.'''
+        r = Square(5, 10, 15)
+        d = {'_Rectangle__height': 5, '_Rectangle__width': 5,
+             '_Rectangle__x': 10, '_Rectangle__y': 15, 'id': 1}
+        self.assertEqual(r.__dict__, d)
+
+        r = Square(5, 10, 15, 20)
+        d = {'_Rectangle__height': 5, '_Rectangle__width': 5,
+             '_Rectangle__x': 10, '_Rectangle__y': 15, 'id': 20}
+        self.assertEqual(r.__dict__, d)
+
+    def test_D_instantiation_keyword(self):
+        '''Tests positional instantiation.'''
+        r = Square(100, id=421, y=99, x=101)
+        d = {'_Rectangle__height': 100, '_Rectangle__width': 100,
+             '_Rectangle__x': 101, '_Rectangle__y': 99, 'id': 421}
+        self.assertEqual(r.__dict__, d)
+
+    def test_E_id_inherited(self):
+        '''Tests if id is inherited from Base.'''
+        Base._Base__nb_objects = 98
+        r = Square(2)
+        self.assertEqual(r.id, 99)
+
+    def test_F_properties(self):
+        '''Tests property getters/setters.'''
+        r = Square(5, 9)
+        r.size = 98
+        r.x = 102
+        r.y = 103
+        d = {'_Rectangle__height': 98, '_Rectangle__width': 98,
+             '_Rectangle__x': 102, '_Rectangle__y': 103, 'id': 1}
+        self.assertEqual(r.__dict__, d)
+        self.assertEqual(r.size, 98)
+        self.assertEqual(r.x, 102)
+        self.assertEqual(r.y, 103)
+
     def test_f(self):
         s = Square(5)
         self.assertEqual(s.id, 1)
