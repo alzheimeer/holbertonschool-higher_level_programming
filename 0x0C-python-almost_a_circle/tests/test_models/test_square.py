@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-
-"""
-Unit test for models/square.py
-"""
+"""Unittest square"""
 
 import sys
 import os
@@ -32,7 +29,77 @@ class SquareTest(unittest.TestCase):
         if os.path.exists("Square.json"):
             os.remove("Square.json")
 
-    def test_one_arg(self):
+    #-----------------Test----------------------------
+
+    def test_A(self):
+        '''Tests Square class type.'''
+        self.assertEqual(str(Square),
+                         "<class 'models.square.Square'>")
+
+    def test_B(self):
+        '''Tests if Square inherits Base.'''
+        self.assertTrue(issubclass(Square, Base))
+
+    def test_C(self):
+        '''Tests constructor signature.'''
+        with self.assertRaises(TypeError) as e:
+            r = Square()
+            s = "__init__() missing 1 required positional argument: 'size'"
+            self.assertEqual(str(e.exception), s)
+
+    def test_D(self):
+        '''Tests constructor signature.'''
+        with self.assertRaises(TypeError) as e:
+            r = Square(1, 2, 3, 4, 5)
+            s = "__init__() takes from 2 to 5 positional arguments but 6 \
+            were given"
+            self.assertEqual(str(e.exception), s)
+
+    def test_E(self):
+        '''Tests instantiation.'''
+        r = Square(10)
+        self.assertEqual(str(type(r)), "<class 'models.square.Square'>")
+        self.assertTrue(isinstance(r, Base))
+        d = {'_Rectangle__height': 10, '_Rectangle__width': 10,
+             '_Rectangle__x': 0, '_Rectangle__y': 0, 'id': 1}
+        self.assertDictEqual(r.__dict__, d)
+
+        with self.assertRaises(TypeError) as e:
+            r = Square("1")
+        msg = "width must be an integer"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(TypeError) as e:
+            r = Square(1, "2")
+        msg = "x must be an integer"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(TypeError) as e:
+            r = Square(1, 2, "3")
+        msg = "y must be an integer"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(ValueError) as e:
+            r = Square(-1)
+        msg = "width must be > 0"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(ValueError) as e:
+            r = Square(1, -2)
+        msg = "x must be >= 0"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(ValueError) as e:
+            r = Square(1, 2, -3)
+        msg = "y must be >= 0"
+        self.assertEqual(str(e.exception), msg)
+
+        with self.assertRaises(ValueError) as e:
+            r = Square(0)
+        msg = "width must be > 0"
+        self.assertEqual(str(e.exception), msg)
+
+    def test_f(self):
         s = Square(5)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.width, 5)
@@ -40,7 +107,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(s.x, 0)
         self.assertEqual(s.y, 0)
 
-    def test_two_args(self):
+    def test_g(self):
         r1 = Square(10, 2)
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 10)
@@ -48,7 +115,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(r1.x, 2)
         self.assertEqual(r1.y, 0)
 
-    def test_three_args(self):
+    def test_h(self):
         r2 = Square(98, 12, 64)
         self.assertEqual(r2.id, 1)
         self.assertEqual(r2.width, 98)
@@ -56,7 +123,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(r2.x, 12)
         self.assertEqual(r2.y, 64)
 
-    def test_four_args(self):
+    def test_i(self):
         r3 = Square(4, 51, 96, 88)
         self.assertEqual(r3.id, 88)
         self.assertEqual(r3.width, 4)
@@ -64,30 +131,30 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(r3.x, 51)
         self.assertEqual(r3.y, 96)
 
-    def test_5args(self):
+    def test_j(self):
         pass
 
-    def test_private_attributes(self):
+    def test_k(self):
         r5 = Square(11, 6, 87, 6)
         d = {"_Rectangle__width": 11, "_Rectangle__height": 11,
              "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6}
         self.assertEqual(r5.__dict__, d)
 
-    def test_none(self):
+    def test_n(self):
         with self.assertRaises(TypeError) as x:
             r = Square(None)
         self.assertEqual(
             "width must be an integer",
             str(x.exception))
 
-    def test_no_args(self):
+    def test_m(self):
         with self.assertRaises(TypeError) as x:
             r = Square()
         self.assertEqual(
             "__init__() missing 1 required positional argument: 'size'",
             str(x.exception))
 
-    def test_string_test(self):
+    def test_o(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, "2")
         self.assertEqual(
@@ -106,7 +173,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, "lol")
         self.assertEqual(r.id, "lol")
 
-    def test_float_test(self):
+    def test_p(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, 2.1)
         self.assertEqual(
@@ -125,7 +192,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, 12.3)
         self.assertEqual(r.id, 12.3)
 
-    def test_list_test(self):
+    def test_q(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, [])
         self.assertEqual(
@@ -144,7 +211,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, ["hi"])
         self.assertEqual(r.id, ["hi"])
 
-    def test_dict_test(self):
+    def test_w(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, {})
         self.assertEqual(
@@ -163,7 +230,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, {"hi": None})
         self.assertEqual(r.id, {"hi": None})
 
-    def test_bool_test(self):
+    def test_z(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, True)
         self.assertEqual(
@@ -182,7 +249,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, False)
         self.assertEqual(r.id, False)
 
-    def test_tuple_test(self):
+    def test_xw(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, ())
         self.assertEqual(
@@ -201,7 +268,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, ("hi",))
         self.assertEqual(r.id, ("hi",))
 
-    def test_sets_test(self):
+    def test_zz(self):
         with self.assertRaises(TypeError) as x:
             r = Square(10, {})
         self.assertEqual(
@@ -220,7 +287,7 @@ class SquareTest(unittest.TestCase):
         r = Square(10, 2, 0, {"hi"})
         self.assertEqual(r.id, {"hi"})
 
-    def test_negative_ints(self):
+    def test_ne(self):
         with self.assertRaises(ValueError) as x:
             r = Square(1, -2)
         self.assertEqual(
@@ -239,7 +306,7 @@ class SquareTest(unittest.TestCase):
         r = Square(1, 2, 5, -1)
         self.assertEqual(r.id, -1)
 
-    def test_zero(self):
+    def test_ze(self):
         r = Square(6, 0)
         self.assertEqual(r.x, 0)
         with self.assertRaises(ValueError) as x:
