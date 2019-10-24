@@ -129,7 +129,7 @@ class Base():
         y = -255
         for i in lists:
             t.pensize(0)
-            t.color((randint(1,255), randint(1,255),randint(1,255)))
+            t.color((randint(1, 255), randint(1, 255), randint(1, 255)))
             t.goto(j, y)
             j += 70
             y += 60
@@ -140,6 +140,5 @@ class Base():
                 t.back(i.height)
                 t.right(90)
             t.left(50)
-
 
         turtle.exitonclick()
