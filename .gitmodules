@@ -1,0 +1,3 @@
+[submodule "AirBnB_clone"]
+	path = AirBnB_clone
+	url = https://github.com/vargas88hugo/AirBnB_clone.git
