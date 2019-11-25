@@ -1,6 +1,6 @@
-# :shell: 0x0D - SQL: Introduction :shell:
+# 0x0D - SQL: Introduction:
 
-## :running: Getting Started
+## Getting Started
 
 * [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) - Operating system reqd.
 
