@@ -14,6 +14,7 @@ if __name__ == "__main__":
     cursor.execute(sql)
     result = cursor.fetchall()
     for data in result:
-        print(data)
+        if data[1] == argv[4]:
+            print(data)
     cursor.close()
     conn.close()
