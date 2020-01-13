@@ -4,11 +4,11 @@
    print(response.getheader("X-Request-Id"))
 """
 
-from urllib import request
+from urllib.request
 import sys
 
 url = sys.argv[1]
-with request.urlopen(url) as response:
+with urllib.request.urlopen(url) as response:
     header = response.info()
 if "X-Request-Id" in header:
     print(header['X-Request-Id'])
