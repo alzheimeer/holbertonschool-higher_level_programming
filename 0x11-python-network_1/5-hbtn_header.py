@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ requests to get header info"""
 import requests
-from sys
+import sys
 
 if __name__ == "__main__":
     response = requests.get(sys.argv[1])
