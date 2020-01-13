@@ -7,7 +7,8 @@ and displays the body of the response (decoded in utf-8)
 from urllib import request, parse
 import sys
 
-a = sys.argv[1]
-b = parse.urlencode({"email": sys.argv[2]}).encode()
-with request.urlopen(a, b) as response:
-    print(response.read().decode('utf-8'))
+if __name__ == "__main__":
+    a = sys.argv[1]
+    b = parse.urlencode({"email": sys.argv[2]}).encode()
+    with request.urlopen(a, b) as response:
+        print(response.read().decode('utf-8'))
