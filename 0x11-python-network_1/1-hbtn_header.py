@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""sends a request and displays value X-Request-Id in header response.
-   response.info() show all information and with an if find X-request or
-   print(response.getheader("X-Request-Id"))
+"""
+sends a request and displays value X-Request-Id in header response.
+response.info() show all information and with an if find X-request or
+print(response.getheader("X-Request-Id"))
 """
 
-from urllib.request
+from urllib import request
 import sys
 
-url = sys.argv[1]
-with urllib.request.urlopen(url) as response:
-    header = response.info()
-if "X-Request-Id" in header:
-    print(header['X-Request-Id'])
+url=sys.argv[1]
+if __name__ == "__main__":
+    with request.urlopen(url) as response:
+        print(response.getheader("X-Request-Id"))
