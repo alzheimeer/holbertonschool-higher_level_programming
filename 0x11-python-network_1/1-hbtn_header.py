@@ -5,10 +5,9 @@ response.info() show all information and with an if find X-request or
 print(response.getheader("X-Request-Id"))
 """
 
-from urllib import request
+import urllib.request
 import sys
 
-url=sys.argv[1]
 if __name__ == "__main__":
-    with request.urlopen(url) as response:
+    with urllib.request.urlopen(sys.argv[1]) as response:
         print(response.getheader("X-Request-Id"))
