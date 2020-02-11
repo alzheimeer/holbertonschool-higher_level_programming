@@ -9,7 +9,7 @@ request(url, function (error, response, body) {
     const films = JSON.parse(body).results;
     let n = 0;
     for (const X of films) {
-      for (const char of X) {
+      for (const char of X.characters) {
         if (char.search('/18/') > 0) {
           n++;
         }
