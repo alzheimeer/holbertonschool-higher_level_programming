@@ -1,22 +1,25 @@
 #!/usr/bin/node
 const request = require('request');
-const url = process.argv[2];
-request(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
-  } else {
-    const completed = {};
-    const tasks = JSON.parse(body);
-    for (const task of tasks) {
-      if (task.completed === true) {
-        if (!(task.userId in completed)) {
-          completed[task.userId] = 1;
-        } else {
-          completed[task.userId]++;
-        }
+const options = { // si no colocamos get el lo tom por defecto
+  url: process.argv[2],
+  method: 'GET'
+};
+const completed = {};
+
+request(options, (err, response, body) => {
+  if (err) {
+    console.log(err);
+  }
+  const tasks = JSON.parse(body); // body que se convertirá a JSON
+
+  for (const task of tasks) {
+    if (task.completed === true) {
+      if (!(task.userId in completed)) {
+        completed[task.userId] = 1;
+      } else {
+        completed[task.userId]++;
       }
     }
-    //    console.log(JSON.stringify(completed));
-    console.log(completed);
   }
+  console.log(completed);
 });
