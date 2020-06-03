@@ -52,7 +52,7 @@ if __name__ == "__main__":
                 e6 = e6 + 1
             elif n == "500":
                 e7 = e7 + 1
-            fs = fs + len(line)
+            fs = fs + int(s[8])
             line = sys.stdin.readline()
             c = c + 1
     except KeyboardInterrupt:
